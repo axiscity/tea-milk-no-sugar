@@ -67,7 +67,9 @@ public makeGUI()
 
     
     this.setLayout(new GridLayout2(0, 1));
+
     
+    new MenuBar(this);
     
     JComponent[] c = new JComponent[45];
     
