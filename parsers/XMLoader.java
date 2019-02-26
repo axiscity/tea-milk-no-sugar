@@ -16,7 +16,7 @@ import engine.Params;
 public class XMLoader {
 
 	
-	public NodeList XMLoader(String filename, Params params){
+	public NodeList XMLoader(String filename, Params params, String tagName, String[] strngArray){
 		
 		File file = new File(filename);
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -38,13 +38,13 @@ public class XMLoader {
 			e.printStackTrace();
 		}
 		
-		NodeList nList = document.getElementsByTagName("sw");
+		NodeList nList = document.getElementsByTagName(tagName);
 		
-		params.chkvalueArray = new String[nList.getLength()];
+		strngArray = new String[nList.getLength()];
 
-        for (int i=0; i<params.chkvalueArray.length ; i++){
+        for (int i=0; i<strngArray.length ; i++){
 
-        	params.chkvalueArray[i] = "";
+        	strngArray[i] = "";
         	
         	}
 

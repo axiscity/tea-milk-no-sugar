@@ -26,6 +26,7 @@ import what.SaveUserTXTFile;
 import what.TextAreaListener;
 import what.jcmBoListener;
 import layout.GridLayout2;
+import starter.InfoScreen;
 
 
 public class makeGUI extends JFrame
@@ -43,6 +44,8 @@ public JComboBox<?> SaveSearches, SaveReplaced, SurroundWith;
 private JLabel OutPath_Field;
 private JPanel UpperPanel = new JPanel();	
 private JPanel LowerPanel = new JPanel();	
+
+private InfoScreen info = new InfoScreen();
 
 public Params BPs = new Params();
 
@@ -69,7 +72,7 @@ public makeGUI()
     this.setLayout(new GridLayout2(0, 1));
 
     
-    new MenuBar(this);
+    new MenuBar(BPs, this);
     
     JComponent[] c = new JComponent[45];
     
@@ -136,6 +139,8 @@ public makeGUI()
 	
 	//this.add(SaveSearches);
 	
+
+	
 	//FileNameSearch_Field.setEnabled(false);
 	//FileNameSearch_Field.setBackground(new Color(240,240,240));
 	
@@ -201,6 +206,8 @@ public makeGUI()
     LowerPanel.setLayout(new GridLayout2(2, 5, 5, 5));
     new XMLpanel(LowerPanel, new Dimension(10, 10), BPs);
     this.add(LowerPanel);
+    
+    
     
     /// Add Listeners
     

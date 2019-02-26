@@ -50,7 +50,7 @@ public class SaveUserTXTFile {
         //rfc.showSaveDialog(rfc);
 
         
-        JFileChooser fileChooser = new JFileChooser(params.localpath);
+        JFileChooser fileChooser = new JFileChooser(params.localpathA);
         fileChooser.setDialogTitle("Specify a file to save");   
         
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Batch File","bat");

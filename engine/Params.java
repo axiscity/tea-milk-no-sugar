@@ -2,18 +2,24 @@ package engine;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import parsers.XMLvar;
 
 public class Params {
 
 	
 
 
-
-
-	public String localpath = "";
+	public String localpathA = (String) new XMLvar().XMLvar("appsettings.xml", this, "app_path", 0);
+	
+	public String localpathB = "C:\\Users\\Geoff\\Documents\\Seats\\";
+	
+	public JCheckBoxMenuItem menu2Item1;
+	public JCheckBoxMenuItem menu2Item2;
 	
 
 	//public JTextField OutPathField;
@@ -75,6 +81,8 @@ public class Params {
 
 
 	public String optionstring;
+	
+	
 
 
 	

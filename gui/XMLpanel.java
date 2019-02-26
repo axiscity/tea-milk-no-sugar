@@ -12,7 +12,7 @@ public class XMLpanel {
 	
 	XMLpanel(JPanel panel, Dimension dim, Params params){
 
-		NodeList nList = new XMLoader().XMLoader("flags.xml", params);
+		NodeList nList = new XMLoader().XMLoader("appsettings.xml", params, "sw", params.chkvalueArray);
 	
 		for (int i = 0; i < nList.getLength(); i++) {
 			System.out.println("DD" + nList.item(i).getTextContent() + i);

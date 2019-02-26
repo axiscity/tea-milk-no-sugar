@@ -1,0 +1,28 @@
+<!-- 
+BBFB Settings file
+www.persuasive-images.net/BBFB
+ -->
+<bbfb>
+<mode>
+Robocopy
+</mode>
+<message>
+Geoffs Backup
+<message\>
+<folder1>
+C:\Users\Geoff\Documents\Seats
+</folder1>
+<folder2>
+D:\backup
+</folder2>
+<search>
+*jpg
+</search>
+<flags>
+<sw txt="Copies files in Restart mode">//z</sw>
+<sw txt="Copies files in Backup mode">//b</sw>
+</flags>
+<stayopen>
+true
+</stayopen>
+</bbfb>

@@ -2,22 +2,28 @@ package what;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import engine.Params;
 
 public class MenuListener {
 
 	public JFrame parent;
 	
-	public MenuListener(JMenuItem menuitem) {
+	public MenuListener(Params params, JMenuItem menuitem) {
 		// TODO Auto-generated constructor stub
 		
 		parent = (JFrame) menuitem.getParent();
+
 		
 		menuitem.addActionListener(new ActionListener() {
 		
@@ -25,29 +31,57 @@ public class MenuListener {
 	            
 		    	String MenuText = menuitem.getText();
 		    	
-		    	
+		    	System.out.println(MenuText);
 		    	
 		    	switch (MenuText) {
 		    	
 		    	case "Load Settings":
 		    	
-		    	LoadSettings();
+		    	LoadSettings(params);
 		    		
 		    	break;
 		    		
 		    	case "Save Settings":
 		    		
-		    	SaveSettings();	
+		    	SaveSettings(params);	
 		    		
 		    	break;	
+		    	
+		    	case "Xcopy":
+		    	
+		    	params.menu2Item1.setState(false);
+		    	params.menu2Item2.setState(true);
+		    	
+		    	
+		    	break;
+		    	
+		    	case "Robocopy":
+		    	
+		    	params.menu2Item1.setState(true);
+		    	params.menu2Item2.setState(false);
+		    	
+		    	
+		    	break;
+		    	
+		    	
+		    	case "About":
+		    		
+		    	JOptionPane.showMessageDialog(parent, "BBFB");
+		    	
+		    	break;
+		    	
+		    	case "Export Batch File":
+		    		
+		    	
+		    	
+		    	break;
 		    	
 		    	
 		    	}
 		    	
-		    	
-		    	
-		    	
 
+
+		    	
 		}
 		
 		
@@ -57,27 +91,43 @@ public class MenuListener {
 
 }
 	
-	private void LoadSettings() {
+	protected void Mode() {
+		// TODO Auto-generated method stub
 		
 		
-		System.out.println("Load Some Settings");
 		
-		FileFilter filter = new FileNameExtensionFilter("BBFD","bbfd");
 		
-		final JFileChooser fc = new JFileChooser();
+	}
+
+	private void LoadSettings(Params params) {
+		
+		
+		System.out.println("Load Some Settings" + params.localpathA + "Hello");
+		
+		FileFilter filter = new FileNameExtensionFilter("BBFB","bbfb");
+		
+		File StartingDirA = new File(params.localpathA);
+		File StartingDirB = new File(params.localpathB);
+		
+		System.out.println("get Path" + StartingDirA.getPath() + " exists: " + StartingDirA.exists() );
+		System.out.println("get Path" + StartingDirB.getPath() + " exists: " + StartingDirB.exists() );
+		
+		final JFileChooser fc = new JFileChooser(StartingDirA);
+		fc.setCurrentDirectory(StartingDirA);
 		fc.addChoosableFileFilter(filter);
 		fc.setDialogTitle("Load Settings");
+		
 		int result = fc.showOpenDialog(parent);
 		
 	}
 	
 	
-	private void SaveSettings() {
+	private void SaveSettings(Params params) {
 		
 		
 		System.out.println("Save Some Settings");
 		
-		final JFileChooser fc = new JFileChooser();
+		final JFileChooser fc = new JFileChooser(params.localpathA);
 		fc.setDialogTitle("Save Settings");
 		int result = fc.showOpenDialog(parent);
 		

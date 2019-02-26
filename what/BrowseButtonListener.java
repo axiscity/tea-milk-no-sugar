@@ -57,7 +57,7 @@ public class BrowseButtonListener {
         String FilePath = rfc.getSelectedFile().getPath().toString();
 		*/
         
-        JFileChooser f = new JFileChooser(params.localpath);
+        JFileChooser f = new JFileChooser(params.localpathA);
         f.setDialogTitle(DiagTitle);
         f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); 
         f.showSaveDialog(null);
