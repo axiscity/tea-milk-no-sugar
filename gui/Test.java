@@ -5,7 +5,7 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-import layout.GridLayout2;
+import gui.layout.GridLayout2;
 
 public class Test extends JFrame
 {

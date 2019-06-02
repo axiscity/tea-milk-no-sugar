@@ -17,15 +17,16 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import engine.Params;
-import what.BrowseButtonListener;
-import what.ButtonListener;
-import what.CheckBoxListener;
-import what.DoWorkBTN;
-import what.SaveUserTXTFile;
-import what.TextAreaListener;
-import what.jcmBoListener;
-import layout.GridLayout2;
+import busi.Params;
+import gui.components.*;
+import gui.layout.GridLayout2;
+import gui.listeners.BrowseButtonListener;
+import gui.listeners.ButtonListener;
+import gui.listeners.CheckBoxListener;
+import gui.listeners.DoWorkBTN;
+import gui.listeners.SaveUserTXTFile;
+import gui.listeners.TextAreaListener;
+import gui.listeners.jcmBoListener;
 import starter.InfoScreen;
 
 
@@ -110,21 +111,21 @@ public makeGUI()
 	
 	c[25] = new Spacer().Spacer(col0, this, true, "1");
 	c[26] = new Title().Title(col1, true, "R", "Batch message:");
-	c[27] = SaveReplaced = new dropDown().dropDown(col2, "Settings\\savedReplaced.xml");
+	c[27] = SaveReplaced = new dropDown().dropDown(col2, "storage\\savedReplaced.xml");
 	c[28] = new Spacer().Spacer(col3, this, true, "1");
 	c[29] = new Spacer().Spacer(col4, this, true, "1");
 	
 	
 	c[30] = new Spacer().Spacer(col0, this, true, "1");
 	c[31] = new Title().Title(col1, true, "R", "Surround With:");
-	c[32] = SurroundWith = new dropDown().dropDown(col2, "Settings\\surroundWith.xml");
+	c[32] = SurroundWith = new dropDown().dropDown(col2, "storage\\surroundWith.xml");
 	c[33] = new Spacer().Spacer(col3, this, true, "1");
 	c[34] = new Spacer().Spacer(col4, this, true, "1");
 	
 	
 	c[35] = new Spacer().Spacer(col0, this, true, "1");
 	c[36] = new Title().Title(col1, true, "R", "Folder to backup:");
-	c[37] = SaveSearches = new dropDown().dropDown(col2, "Settings\\savedSearches.xml");
+	c[37] = SaveSearches = new dropDown().dropDown(col2, "storage\\savedSearches.xml");
 	c[38] = FolderMode = new jchkBox().jchkBox(col3, true, "Search Folder");
 	c[39] = new Spacer().Spacer(col4, this, true, "1");
 	
