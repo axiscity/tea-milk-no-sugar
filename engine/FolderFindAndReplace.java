@@ -18,8 +18,9 @@ public class FolderFindAndReplace {
 	
 public void folderSearch(Params params) throws IOException {
 		
-		
-		if(params.FolderSearch=!true){
+		boolean fsearch = params.getFolderSearch(); 
+	
+		if(fsearch=!true){
 	
 		String output = new Utils().PathSplitter(params);
 		
@@ -66,7 +67,7 @@ public void folderSearch(Params params) throws IOException {
 		File[] listOfFiles = new File(output).listFiles();
 		File[] filescontaingName = new File[listOfFiles.length];
 		
-		System.out.println("Folder Search" + numberoffiles + "" + params.InputPath);
+		System.out.println("Folder Search" + numberoffiles + "" + params.getInputPath());
 		
 		for(int i = 0; i < numberoffiles; i++)
 		{
@@ -74,7 +75,7 @@ public void folderSearch(Params params) throws IOException {
 			
 			String path = listOfFiles[i].getAbsolutePath();
 			
-			System.out.println(params.OutPath_Field.getText());
+			System.out.println(params.getOutPath_Field());
 
 				
 				filescontaingName[x] = listOfFiles[i];
@@ -90,7 +91,7 @@ public void folderSearch(Params params) throws IOException {
 						
 						path = listOfFiles[j].getAbsolutePath();
 						
-						if(path.contains(params.FileNameSearch_Field.getText())){
+						if(path.contains(params.getFileNameSearch_Field().getText())){
 						doWork(params, path);
 						
 						System.out.println("Found One");
@@ -128,25 +129,29 @@ public void doWork(Params params, String path)
 		
 		//System.out.println("Its a file:" + thisfile.getPath());
 		
-		params.InputPath = thisfile.getAbsolutePath();
+		params.setInputPath(thisfile.getAbsolutePath());
 		
 		
-		params.FindThis.replace("\\", "\\\\");
-		params.ReplaceWithThis.replace("\\", "\\\\");
+		String replace1 = params.getFindThis().replace("\\", "\\\\");
+		params.setFindThis(replace1);
+		
+		String replace2 = params.getReplaceWithThis().replace("\\", "\\\\");
+		params.setReplaceWithThis(replace2);
+		
 		
 		try {
-			LoadedtextToSearch = new LoadFile().LoadFile(params.InputPath);
+			LoadedtextToSearch = new LoadFile().LoadFile(params.getInputPath());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//LoadedtextToSearch = LoadedtextToSearch.replaceAll("\\\\", "/");
 		
-		System.out.println("Replace With" + params.ReplaceWithThis);
+		System.out.println("Replace With" + params.getReplaceWithThis());
 		
-		String replaceResults = LoadedtextToSearch.replace(params.FindThis, params.ReplaceWithThis);
+		String replaceResults = LoadedtextToSearch.replace(params.getFindThis(), params.getReplaceWithThis());
 		
-		if(params.CharacterSearch)
+		if(params.getCharacterSearch())
 		{ 
 			
 		replaceResults = new Utils().RemoveBadCharactersString(replaceResults);}
@@ -166,35 +171,35 @@ public void doWork(Params params, String path)
 			q++;
 			
 			try {
-				new SaveFile().SaveFile(params.OutputPath + params.Folder + thisfile.getName(), replaceResults, params);
+				new SaveFile().SaveFile(params.getOutputPath() + params.getFolder() + thisfile.getName(), replaceResults, params);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			params.ConsoleMessages = params.ConsoleMessagesTitle + "Replaced " + q + " Instances of:<" + params.FindThis + "> With:<" + params.ReplaceWithThis + ">";
-			params.OutPath_Field.setText(params.ConsoleMessages);
+			params.setConsoleMessages(params.getConsoleMessagesTitle() + "Replaced " + q + " Instances of:<" + params.getFindThis() + "> With:<" + params.getReplaceWithThis() + ">");
+			params.setOutPath_Field(params.getConsoleMessages());
 			
 		} else {
 			
-			System.out.println(params.CharacterSearch);
+			System.out.println(params.getCharacterSearch());
 			
-			if(params.CharacterSearch) {
+			if(params.getCharacterSearch()) {
 				q++;
 				try {
 					
 					
-					new SaveFile().SaveFile(params.OutputPath + params.Folder + thisfile.getName(), replaceResults, params);
+					new SaveFile().SaveFile(params.getOutputPath() + params.getFolder() + thisfile.getName(), replaceResults, params);
 					//new SaveFile().SaveFile(params.OutputPath + params.Folder + file.getName(), replaceResults, params);
 				
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				params.ConsoleMessages = params.ConsoleMessagesTitle + "Invalid Characters Replaced";
+				params.setConsoleMessages(params.getConsoleMessagesTitle() + "Invalid Characters Replaced");
 			} else {
 				
-				params.ConsoleMessages = params.ConsoleMessagesTitle + "No instances found no files saved";
-				params.OutPath_Field.setText(q + " " + params.ConsoleMessages);	
+				params.setConsoleMessages(params.getConsoleMessagesTitle() + "No instances found no files saved");
+				params.setOutPath_Field(q + " " + params.getConsoleMessages());	
 				
 			}
 			

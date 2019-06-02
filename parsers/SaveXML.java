@@ -56,13 +56,13 @@ public class SaveXML {
 	    
 	    if(FileName=="savedSearches.xml"){
 	    	
-	    	saveNode.setTextContent(SPs.FindThis);
-	    	System.out.println("Save Search > FindThis:" + SPs.FindThis);
+	    	saveNode.setTextContent(SPs.getFindThis());
+	    	System.out.println("Save Search > FindThis:" + SPs.getFindThis());
 	    	
 	    } else { if (FileName=="savedReplaced.xml")
 	    {
 	    	
-	    	saveNode.setTextContent(SPs.ReplaceWithThis);
+	    	saveNode.setTextContent(SPs.getReplaceWithThis());
 	    
 	    }
 	    	

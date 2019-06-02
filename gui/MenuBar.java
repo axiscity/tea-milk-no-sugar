@@ -32,8 +32,8 @@ public class MenuBar extends JFrame{
 	
 	public MenuBar(Params params, JFrame _frame) {
 		
-		params.menu2Item1 = menu2Item1;
-		params.menu2Item2 = menu2Item2;
+		params.setMenu2Item1(menu2Item1);
+		params.setMenu2Item2(menu2Item2);
 		
 		
 		menu1Item1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));

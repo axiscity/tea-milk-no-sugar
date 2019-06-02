@@ -11,6 +11,6 @@
 <sw txt="Excludes older files">//xo</sw>
 <sw txt="Writes the status output to the log file">//log</sw>
 <app_path>
-C:\Users\Geoff\Documents\Seats\
+C:\\Users\\Geoff\\Documents\\seats\\
 </app_path>
 </options>

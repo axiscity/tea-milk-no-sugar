@@ -29,16 +29,16 @@ public class CheckBoxListener {
 		    {
 		        JCheckBox checkBox = (JCheckBox)event.getSource();	       
 		        System.out.println(checkBox.getText());
-		        params.FolderSearch = checkBox.isSelected();
+		        params.setFolderSearch(checkBox.isSelected());
 	        
 		        if(checkBox.getText() == "Search Folder"){
-		        	params.FolderSearch = checkBox.isSelected();
+		        	params.setFolderSearch(checkBox.isSelected());
 		        	
-		        	if(params.FolderSearch) {
+		        	if(params.getFolderSearch()) {
 		        		
-		        		System.out.println("Trim:" + params.OutputPath);
-		        		params.OutputPath = new Utils().PathSplitter(params);
-		        		params.OutPath_Field.setText(params.OutputPath + params.Folder);
+		        		System.out.println("Trim:" + params.getOutputPath());
+		        		params.setOutputPath(new Utils().PathSplitter(params));
+		        		params.setOutPath_Field(params.getOutputPath() + params.getFolder());
 		        	}
 		        	
 		        }
@@ -55,7 +55,7 @@ public class CheckBoxListener {
 		        	
 		        	if(checkBox.isSelected()){
 
-		        	params.FileNameSearch = true;
+		        	params.setFileNameSearch(true);
 		        	params.FileNameSearch_Field.setEnabled(true);
 		        	params.FileNameSearch_Field.setBackground(new Color(255,255,255));
 		        	params.FolderSearchCHB.setSelected(true);
@@ -64,7 +64,7 @@ public class CheckBoxListener {
 		        	
 		        	} else {
 		        		
-		        		params.FileNameSearch = false;
+		        		params.setFileNameSearch(false);
 		        		params.FileNameSearch_Field.setEnabled(false);
 		        		params.FileNameSearch_Field.setBackground(new Color(240,240,240));
 		        		params.FolderSearchCHB.setSelected(false);
@@ -113,7 +113,7 @@ public class CheckBoxListener {
 		        
 		        
 		        if(checkBox.getText() == "Bad Character Search"){
-		        	params.CharacterSearch = checkBox.isSelected();
+		        	params.setCharacterSearch(checkBox.isSelected());
 		        }
 		        
 

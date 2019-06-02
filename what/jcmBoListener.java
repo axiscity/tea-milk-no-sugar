@@ -28,13 +28,13 @@ public class jcmBoListener{
 				            
 				            if(combo.getName() == "FindSave"){
 				            	
-				            	 params.FindThis_Field.setText(combo.getSelectedItem().toString());
+				            	 params.setFindThis_Field(combo.getSelectedItem().toString());
 				            	
 				            }
 				            
 				            if(combo.getName() == "ReplaceSave"){
 				            	
-				            	 params.ReplaceWithThis_Field.setText(combo.getSelectedItem().toString());
+				            	 params.setReplaceWithThis_Field(combo.getSelectedItem().toString());
 				            	
 				            }
 				            
@@ -43,7 +43,7 @@ public class jcmBoListener{
 				            	
 				            	System.out.println("SurroundWith");
 				            	
-				            	String text = params.ReplaceWithThis_Field.getText();
+				            	String text = params.getReplaceWithThis_Field();
 				            	
 				            	String surround = combo.getSelectedItem().toString();
 				            	
@@ -51,8 +51,8 @@ public class jcmBoListener{
 				            	String right = surround.substring(surround.length() - 1);
 
 				            	
-				            	params.ReplaceWithThis_Field.setText(left + text + right);
-				            	params.ReplaceWithThis = left + text + right;
+				            	params.setReplaceWithThis_Field(left + text + right);
+				            	params.setReplaceWithThis(left + text + right);
 				            	
 				            }
 				            

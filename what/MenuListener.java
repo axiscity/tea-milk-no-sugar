@@ -102,15 +102,15 @@ public class MenuListener {
 	private void LoadSettings(Params params) {
 		
 		
-		System.out.println("Load Some Settings" + params.localpathA + "Hello");
+		System.out.println("Load Some Settings" + params.getLocalpathA() + "Hello");
 		
 		FileFilter filter = new FileNameExtensionFilter("BBFB","bbfb");
 		
-		File StartingDirA = new File(params.localpathA);
-		File StartingDirB = new File(params.localpathB);
+		File StartingDirA = new File(params.getLocalpathA());
+		//File StartingDirB = new File(params.localpathB);
 		
 		System.out.println("get Path" + StartingDirA.getPath() + " exists: " + StartingDirA.exists() );
-		System.out.println("get Path" + StartingDirB.getPath() + " exists: " + StartingDirB.exists() );
+		//System.out.println("get Path" + StartingDirB.getPath() + " exists: " + StartingDirB.exists() );
 		
 		final JFileChooser fc = new JFileChooser(StartingDirA);
 		fc.setCurrentDirectory(StartingDirA);
@@ -127,7 +127,7 @@ public class MenuListener {
 		
 		System.out.println("Save Some Settings");
 		
-		final JFileChooser fc = new JFileChooser(params.localpathA);
+		final JFileChooser fc = new JFileChooser(params.getLocalpathA());
 		fc.setDialogTitle("Save Settings");
 		int result = fc.showOpenDialog(parent);
 		

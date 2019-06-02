@@ -22,7 +22,18 @@ public class DoWorkBTN {
 				  
 				  
 				  System.out.println("Get Path" + button_btn.getText());
+				  
+				  if(params.getBatchFileLocation_Field().length() < 3) {
+					  
+					 params.setBatchFileLocation_Field(System.getProperty("user.home") + "\\Default.bat");
+					 
+					 new BuildOutput(params);
+					 
+				  } else {
+				  
 				  new BuildOutput(params);
+				  
+				  }
 				  
 			  }
 		

@@ -8,7 +8,7 @@ public class Utils {
 	String path = "";
 	
 	public String PathSplitter(Params params){
-		path = params.InputPath;
+		path = params.getInputPath();
 		
 		path = path.replace("\\","@");
 		String str = path;
@@ -31,7 +31,7 @@ public class Utils {
 	
 	public String OuputPathMake(Params params) {
 		
-		path = params.InputPath;
+		path = params.getInputPath();
 		String extension = path.substring(path.length() - 4, path.length()); /// Get existing file extension
 		String fileNoExtension = path.substring(0, path.length() -4); /// Get file without extension
 		path = fileNoExtension + "_Result" + extension;

@@ -37,7 +37,7 @@ public class BrowseButtonListener {
 		BTN.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
 		        System.out.println("Clicked!" + buttonName);
-		        BTNclick(params.FolderSearch, DiagTitle, params);
+		        BTNclick(params.getFolderSearch(), DiagTitle, params);
 		    }
 		});
 	
@@ -57,7 +57,7 @@ public class BrowseButtonListener {
         String FilePath = rfc.getSelectedFile().getPath().toString();
 		*/
         
-        JFileChooser f = new JFileChooser(params.localpathA);
+        JFileChooser f = new JFileChooser(params.getLocalpathA());
         f.setDialogTitle(DiagTitle);
         f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); 
         f.showSaveDialog(null);
@@ -67,13 +67,16 @@ public class BrowseButtonListener {
 			
 	        System.out.println(f.getCurrentDirectory());
 	        System.out.println(f.getSelectedFile());
-	        params.FolderLocation_Field.setText(f.getSelectedFile().toString());
+	        params.setFolderLocation_Field(f.getSelectedFile().toString());
 
 			
 		} else if(buttonName == "Backup Location" ) { 
 			
-			params.BackupLocation_Field.setText(f.getSelectedFile().toString());
+			params.setBackupLocation_Field(f.getSelectedFile().toString());
 			System.out.println("Set Replace Text");
+			
+		} else if(buttonName == "Save .BAT") {
+			
 			
 		}
 

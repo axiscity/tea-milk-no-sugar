@@ -40,21 +40,26 @@ public class chkBox extends Component {
 		        String options = "";
 		        
 		        if(cb.isSelected()){
-		        params.chkvalueArray[i] = cb.getText();
+		        //params.chkvalueArray[i] = cb.getText();
+		        
+		        params.setChkvalueArray(cb.getText(), i);
+		        
 		        } else {
-		        	
-		        params.chkvalueArray[i] = "";	
+		        params.setChkvalueArray("", i);
 		        }
-		        for (int i=0; i<params.chkvalueArray.length ; i++){
+		        
+		        
+		        
+		        for (int i=0; i< params.getChkvalueArray().length ; i++){
 		     
 
 		        	
-		        	options = options + params.chkvalueArray[i];
+		        	options = options + params.getChkvalueArray()[i];
 		        	
-		        	if(i<=params.chkvalueArray.length){
+		        	if(i<=params.getChkvalueArray().length){
 		        		
-		        		params.optionstring = options;
-		        		System.out.println(params.optionstring);
+		        		params.setOptionstring(options);
+		        		System.out.println(params.getOptionstring());
 		        	}
 
 		        }

@@ -17,6 +17,13 @@ public class XMLvar {
 		nList = new XMLoader().XMLoader(xmlPath, params, TagName, ArrayResult);
 		result = nList.item(i).getTextContent();
 		
+		
+		
+		result = result.replaceAll("\\\\", "\\\\\\\\");
+		
+		String[] split = result.split("_");
+		StringBuilder sb = new StringBuilder();
+		
 		System.out.println("RESULT::" + result + ":::" + nList.getLength() + nList.toString());
 		
 		return result;

@@ -11,20 +11,20 @@ public class FindReplace extends Bbuilder{
 	public String LoadedtextToSearch;
 	public FindReplace(Params searchparams) throws IOException {
 		// TODO Auto-generated constructor stub
-		LoadedtextToSearch = new LoadFile().LoadFile(searchparams.InputPath);
+		LoadedtextToSearch = new LoadFile().LoadFile(searchparams.getInputPath());
 		
 		
-		System.out.println(searchparams.FindThis);
-		System.out.println(searchparams.ReplaceWithThis);
+		System.out.println(searchparams.getFindThis());
+		System.out.println(searchparams.getReplaceWithThis());
 		
-		searchparams.FindThis.replace("\\", "\\\\");
-		searchparams.ReplaceWithThis.replace("\\", "\\\\");
+		searchparams.getFindThis().replace("\\", "\\\\");
+		searchparams.getReplaceWithThis().replace("\\", "\\\\");
 		
 		
-		String replaceResults = LoadedtextToSearch.replace(searchparams.FindThis, searchparams.ReplaceWithThis);
+		String replaceResults = LoadedtextToSearch.replace(searchparams.getFindThis(), searchparams.getReplaceWithThis());
 
 		
-		if(searchparams.CharacterSearch)
+		if(searchparams.getCharacterSearch())
 		{ 
 			
 		replaceResults = new Utils().RemoveBadCharactersString(replaceResults);}
@@ -35,7 +35,7 @@ public class FindReplace extends Bbuilder{
 		}
 		
 		
-		if(searchparams.FolderSearch){
+		if(searchparams.getFolderSearch()){
 			
 			//System.out.println("FOLDER SEARCH" + searchparams.FolderSearch);
 			//System.out.println(searchparams.OutputPath);
@@ -48,16 +48,16 @@ public class FindReplace extends Bbuilder{
 		
 		} else {
 			
-			File file = new File(searchparams.InputPath);
+			File file = new File(searchparams.getInputPath());
 			
 			
 			
 			
-			new SaveFile().SaveFile(searchparams.OutputPath + searchparams.Folder + file.getName(), replaceResults, searchparams);
+			new SaveFile().SaveFile(searchparams.getOutputPath() + searchparams.getFolder() + file.getName(), replaceResults, searchparams);
 			
 			//new SaveFile().SaveFile(searchparams.OutputPath, replaceResults, searchparams);;
 			//System.out.println(searchparams.FolderSearch);
-			System.out.println(searchparams.OutputPath + searchparams.Folder + file.getName());
+			System.out.println(searchparams.getOutputPath() + searchparams.getFolder() + file.getName());
 
 			
 			

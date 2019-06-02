@@ -35,7 +35,7 @@ public class SaveUserTXTFile {
 		BTN.addMouseListener(new MouseAdapter() {
 		    public void mouseClicked(MouseEvent e) {
 		        System.out.println("Clicked!" + buttonName);
-		        BTNclick(params.FolderSearch, DiagTitle, params);
+		        BTNclick(params.getFolderSearch(), DiagTitle, params);
 		    }
 		});
 	
@@ -50,7 +50,7 @@ public class SaveUserTXTFile {
         //rfc.showSaveDialog(rfc);
 
         
-        JFileChooser fileChooser = new JFileChooser(params.localpathA);
+        JFileChooser fileChooser = new JFileChooser(params.getLocalpathA());
         fileChooser.setDialogTitle("Specify a file to save");   
         
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Batch File","bat");

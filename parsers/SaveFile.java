@@ -14,12 +14,12 @@ public class SaveFile {
 		
 		System.out.println("MKDIR:" + Fname);
 		
-		System.out.println(params.OutputFolder);
+		System.out.println(params.getOutputFolder());
 		
 		
 		
 		
-		File Folder = new File(params.OutputPath + params.Folder);
+		File Folder = new File(params.getOutputPath() + params.getFolder());
 		Folder.mkdirs();
 		
 		

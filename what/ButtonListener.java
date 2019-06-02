@@ -35,8 +35,8 @@ public class ButtonListener {
 		gui = guid;
 		btn = button_btn;
 
-		params.FindThis = params.FindThis_Field.getText();
-		params.ReplaceWithThis = params.ReplaceWithThis_Field.getText();
+		params.setFindThis(params.getFindThis_Field());
+		params.setReplaceWithThis(params.getReplaceWithThis_Field());
 
 		button_btn.addActionListener(new ActionListener() {
 
@@ -65,16 +65,16 @@ public class ButtonListener {
 
 					if (BTN_Type == "Save Search") {
 
-						System.out.println("BTN_Type" + params.FindThis + params.ReplaceWithThis);
+						System.out.println("BTN_Type" + params.getFindThis() + params.getReplaceWithThis());
 
-						params.FindThis = params.FindThis_Field.getText();
-						params.ReplaceWithThis = params.ReplaceWithThis_Field.getText();
+						params.setFindThis(params.getFindThis_Field());
+						params.setReplaceWithThis(params.getReplaceWithThis_Field());
 
 						new SaveXML("savedSearches.xml", params);
 						new SaveXML("savedReplaced.xml", params);
 
-						params.SaveSearches.addItem(params.FindThis);
-						params.SaveReplaced.addItem(params.ReplaceWithThis);
+						params.getSaveSearches().addItem(params.getFindThis());
+						params.getSaveReplaced().addItem(params.getReplaceWithThis());
 
 					}
 
@@ -90,7 +90,7 @@ public class ButtonListener {
 
 	protected void ButtonPressed(Params params) throws IOException {
 
-		System.out.println("Replace This: " + params.FindThis + "  With This: " + params.ReplaceWithThis);
+		System.out.println("Replace This: " + params.getFindThis() + "  With This: " + params.getReplaceWithThis());
 		// System.out.println("Load:" + LoadPath_str);
 
 		// new FindReplace(params);
@@ -108,16 +108,16 @@ public class ButtonListener {
 
 		try {
 
-			params.FindThis = params.FindThis_Field.getText();
-			params.ReplaceWithThis = params.ReplaceWithThis_Field.getText();
+			params.setFindThis(params.getFindThis());
+			params.setReplaceWithThis(params.getReplaceWithThis());
 
-			if (params.FolderSearch) {
+			if (params.getFolderSearch()) {
 
 				new FolderFindAndReplace().folderSearch(params);
 
 			}
 
-			if (params.FolderSearch != true) {
+			if (params.getFolderSearch() != true) {
 
 				new FindReplace(params);
 

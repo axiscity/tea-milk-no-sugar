@@ -29,7 +29,7 @@ public class TextAreaListener {
 	        {
 
 	        	
-	        	searchparams.FindThis = TF.getText();
+	        	searchparams.setFindThis(TF.getText());
 	        	System.out.println("TF" + TF.getText());
 	        	
 	        	
@@ -44,13 +44,13 @@ public class TextAreaListener {
                 	
                 	System.out.println("THIS:" + TF.getText());
                 	
-                	searchparams.FindThis = TF.getText();
-                	searchparams.FindThis_Field.setText(TF.getText());
+                	searchparams.setFindThis(TF.getText());
+                	searchparams.setFindThis_Field(TF.getText());
                 	
                 } else if (TFname == "Replace") {
                 	
-                	searchparams.ReplaceWithThis = TF.getText();
-                	searchparams.ReplaceWithThis_Field.setText(TF.getText());
+                	searchparams.setReplaceWithThis(TF.getText());
+                	searchparams.setReplaceWithThis_Field(TF.getText());
                 }
 	            
 	            
