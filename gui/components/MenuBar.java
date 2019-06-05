@@ -21,8 +21,8 @@ public class MenuBar extends JFrame{
 	private JMenu menu2 = new JMenu("Mode");
 	private JMenu menu3 = new JMenu("Help");
 	
-	private JMenuItem menu1Item1 = new JMenuItem("Save storage", KeyEvent.VK_T);
-	private JMenuItem menu1Item2 = new JMenuItem("Load storage", KeyEvent.VK_T);
+	private JMenuItem menu1Item1 = new JMenuItem("Save Settings", KeyEvent.VK_T);
+	private JMenuItem menu1Item2 = new JMenuItem("Load Settings", KeyEvent.VK_T);
 	private JMenuItem menu1Item3 = new JMenuItem("Export Batch File", KeyEvent.VK_T);
 	private JCheckBoxMenuItem menu2Item1 = new JCheckBoxMenuItem("Robocopy", true);
 	private JCheckBoxMenuItem menu2Item2 = new JCheckBoxMenuItem("Xcopy", false);

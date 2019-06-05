@@ -35,13 +35,13 @@ public class MenuListener {
 		    	
 		    	switch (MenuText) {
 		    	
-		    	case "Load storage":
+		    	case "Load Settings":
 		    	
 		    	LoadSettings(params);
 		    		
 		    	break;
 		    		
-		    	case "Save storage":
+		    	case "Save Settings":
 		    		
 		    	SaveSettings(params);	
 		    		
