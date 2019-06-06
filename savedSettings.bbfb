@@ -3,26 +3,23 @@ BBFB Settings file
 www.persuasive-images.net/BBFB
  -->
 <bbfb>
-<mode>
+<setting type="mode">
 Robocopy
-</mode>
-<message>
+</setting>
+<setting type="title">
 Geoffs Backup
-<message\>
-<folder1>
+</setting>
+<setting type="target">
 C:\Users\Geoff\Documents\Seats
-</folder1>
-<folder2>
+</setting>
+<setting type="destination">
 D:\backup
-</folder2>
-<search>
+</setting>
+<setting type="keyword">
 *jpg
-</search>
-<flags>
-<sw txt="Copies files in Restart mode">//z</sw>
-<sw txt="Copies files in Backup mode">//b</sw>
-</flags>
-<stayopen>
-true
-</stayopen>
+</setting>
+<setting type ="flag" >
+//z@//b@stay_open
+</setting>
+</setting>
 </bbfb>

@@ -1,12 +1,10 @@
 package busi;
 
-public class LoadSaveUpdate {
+public interface LoadSaveUpdate {
 
-	public LoadSaveUpdate() {
-		// TODO Auto-generated constructor stub
-		
-		
-		
-	}
+void makeRecord();
+void updateRecord();
+void loadRecord();
 
+	
 }

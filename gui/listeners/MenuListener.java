@@ -14,6 +14,7 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import busi.Params;
+import common.BBuilderConstants;
 
 public class MenuListener {
 
@@ -109,7 +110,7 @@ public class MenuListener {
 		File StartingDirA = new File(params.getLocalpathA());
 		//File StartingDirB = new File(params.localpathB);
 		
-		System.out.println("get Path" + StartingDirA.getPath() + " exists: " + StartingDirA.exists() );
+		//System.out.println("get Path" + StartingDirA.getPath() + " exists: " + StartingDirA.exists() );
 		//System.out.println("get Path" + StartingDirB.getPath() + " exists: " + StartingDirB.exists() );
 		
 		final JFileChooser fc = new JFileChooser(StartingDirA);
@@ -128,8 +129,11 @@ public class MenuListener {
 		System.out.println("Save Some storage");
 		
 		final JFileChooser fc = new JFileChooser(params.getLocalpathA());
-		fc.setDialogTitle("Save storage");
+		fc.setDialogTitle("Save Settings");
 		int result = fc.showOpenDialog(parent);
+		String chosenFile = fc.getSelectedFile().getAbsolutePath();
+		System.out.print(chosenFile);
+		BBuilderConstants.saveFile = chosenFile;
 		
 		
 	}
