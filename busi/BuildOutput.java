@@ -65,10 +65,10 @@ public class BuildOutput implements Runnable{
 		  
 		  try {
 			  writer = new FileWriter(file1);
-			  writer.write("@pause\r\n\r\n");
-			  writer.write(":Created by Batch Builder\r\n\r\n:" +
-			  params.getBatchFileLocation_Field() + "\r\n\r\n"); 
-			  writer.write(line1 + options + "\r\n\r\n"); 
+			  writer.write("echo Created by Batch Builder\r\n\r\n:" +
+			  "www.persuasive-images.net/bb" + "\r\n\r\n" +  
+			  ":"+ params.getBatchFileLocation_Field() + "\r\n\r\n"); 
+			  writer.write(":" + line1 + options + "\r\n\r\n"); 
 			  writer.write("@pause\r\n\r\n"); 
 			  writer.close();
 			  
