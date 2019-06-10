@@ -1,5 +1,7 @@
 package busi;
 
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JCheckBoxMenuItem;
@@ -8,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import common.XMLvar;
+import gui.components.chkBox;
 
 public class Params {
 
@@ -18,8 +21,8 @@ public class Params {
 	
 	//private String localpathB = "C:\\Users\\Geoff\\Documents\\Seats\\";
 	
-	public JCheckBoxMenuItem menu2Item1;
-	public JCheckBoxMenuItem menu2Item2;
+	public static JCheckBoxMenuItem menu2Item1;
+	public static JCheckBoxMenuItem menu2Item2;
 	
 
 	//private JTextField OutPathField;
@@ -29,13 +32,13 @@ public class Params {
 	private JButton button_btn;
 	public JButton Go_btn;
 	
-	private String[] chkvalueArray;
+	public static ArrayList<JCheckBox> chkBoxesArray = new ArrayList<JCheckBox>(10);
 	
-	private JTextField LoadPath_Field;
+	public static JTextField LoadPath_Field;
 	private JTextField SavePath_Field;
 	private JTextField FindThis_Field; 
 	private JTextField ReplaceWithThis_Field; 
-	public JTextField FileNameSearch_Field;
+	
 	private JTextField OutPath_Field;
 	
 	
@@ -71,10 +74,11 @@ public class Params {
 	private String subDir = "/e";
 	private String monitorMins = "/MOT:";
 	
-	public JTextField BatchFileLocation_Field;
-	public JTextField BackupLocation_Field;
-	public JTextField FolderLocation_Field;
-
+	public static JTextField BatchFileLocation_Field;
+	public static JTextField BackupLocation_Field;
+	public static JTextField FolderLocation_Field;
+	public static JTextField FileNameSearch_Field;
+	
 	public JButton BatchFileLocation_btn;
 	public JButton BackupLocation_btn;
 	public JButton FolderLocation_btn;
@@ -143,13 +147,15 @@ public class Params {
 	}
 
 
-	public String[] getChkvalueArray() {
-		return chkvalueArray;
+	public ArrayList<JCheckBox> getchkBoxesArray() {
+		
+		return (ArrayList<JCheckBox>) chkBoxesArray;
 	}
 
 
-	public void setChkvalueArray(String chkvalueArray, int i) {
-		this.chkvalueArray[i] = chkvalueArray;
+	public void setchkBoxesArray(JCheckBox chk, int i) {
+		
+		Params.chkBoxesArray.set(i, chk);
 	}
 
 

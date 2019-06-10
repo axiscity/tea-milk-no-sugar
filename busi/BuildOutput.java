@@ -50,7 +50,10 @@ public class BuildOutput implements Runnable{
 			file1.createNewFile();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			
+			System.out.println("Check you can write to the Batch file location");
+			
 		} 
 		  
 		  } catch (NullPointerException e) {

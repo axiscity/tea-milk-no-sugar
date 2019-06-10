@@ -6,5 +6,4 @@ void makeRecord();
 void updateRecord();
 void loadRecord();
 
-	
 }

@@ -13,12 +13,15 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import busi.LoadSaveUpdate;
 import busi.Params;
+import busi.record;
 import common.BBuilderConstants;
 
 public class MenuListener {
 
 	public JFrame parent;
+	
 	
 	public MenuListener(Params params, JMenuItem menuitem) {
 		// TODO Auto-generated constructor stub
@@ -60,6 +63,7 @@ public class MenuListener {
 		    	
 		    	params.menu2Item1.setState(true);
 		    	params.menu2Item2.setState(false);
+		    	
 		    	
 		    	
 		    	break;
@@ -113,12 +117,18 @@ public class MenuListener {
 		//System.out.println("get Path" + StartingDirA.getPath() + " exists: " + StartingDirA.exists() );
 		//System.out.println("get Path" + StartingDirB.getPath() + " exists: " + StartingDirB.exists() );
 		
-		final JFileChooser fc = new JFileChooser(StartingDirA);
+		final JFileChooser fc = new JFileChooser(BBuilderConstants.loadPath);
 		fc.setCurrentDirectory(StartingDirA);
 		fc.addChoosableFileFilter(filter);
-		fc.setDialogTitle("Load storage");
-		
+		fc.setDialogTitle("Load Settings");
 		int result = fc.showOpenDialog(parent);
+		String chosenFile = fc.getSelectedFile().getAbsolutePath();
+		ActionListener l = null;
+		System.out.print("fc:" + chosenFile);
+		BBuilderConstants.loadFile = chosenFile;
+		
+		record rec = new record();
+		rec.loadRecord();
 		
 	}
 	

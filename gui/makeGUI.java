@@ -147,16 +147,19 @@ public makeGUI()
 	
 	
 	new SaveUserTXTFile(BatchFileLocation_btn, "Save Batch File", BPs);
-	BPs.BatchFileLocation_Field = BatchFileLocation_Field;
+	Params.BatchFileLocation_Field = BatchFileLocation_Field;
 	BPs.BatchFileLocation_btn = BatchFileLocation_btn;
 	
-	BPs.FolderLocation_Field = FolderLocation_Field; 
+	Params.FolderLocation_Field = FolderLocation_Field; 
 	BPs.FolderLocation_btn = FolderLocation_btn;
 	new BrowseButtonListener(FolderLocation_btn, "Folder to backup", BPs);
 	
 	BPs.BackupLocation_btn  = BackupLocation_btn;
-	BPs.BackupLocation_Field = BackupLocation_Field;
+	
+	Params.BackupLocation_Field = BackupLocation_Field;
 	new BrowseButtonListener(BackupLocation_btn, "Backup to here", BPs);
+	
+	Params.FileNameSearch_Field = FileNameSearch_Field;
 	
 	new DoWorkBTN(Go_btn, BPs, null);
 	BPs.Go_btn = Go_btn;

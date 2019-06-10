@@ -15,11 +15,13 @@ C:\Users\Geoff\Documents\Seats
 <setting type="destination">
 D:\backup
 </setting>
+<setting type="batchfile">
+C:\Users\Geoff\Desktop\Batch_Files\backup_documents.bat
+</setting>
 <setting type="keyword">
-*jpg
+*.jpg
 </setting>
 <setting type ="flag" >
-//z@//b@stay_open
-</setting>
+//z@//b@stay_open@//move
 </setting>
 </bbfb>

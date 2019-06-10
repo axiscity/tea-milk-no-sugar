@@ -15,10 +15,12 @@ import javax.swing.border.Border;
 import busi.Params;
 import busi.Utils;
 
-public class chkBox extends Component {
+public class chkBox extends JCheckBox {
 
 	public JCheckBox chkBox(Dimension xy, Boolean size, String chkValue, String chkToolTip, Params params, int i) {
 		// TODO Auto-generated constructor stub
+		
+		//System.out.println(xy + ":" + size + ":" + chkValue + ":" + chkToolTip + ":" + i);
 		
 		Border blackline = BorderFactory.createLineBorder(Color.black);
 		JLabel spacer = new JLabel(chkValue, SwingConstants.CENTER);
@@ -26,6 +28,7 @@ public class chkBox extends Component {
 	    JCheckBox cb = new JCheckBox();
 	    cb.setPreferredSize(xy);
 		cb.setText(chkValue);
+		cb.setName(chkValue);
 		
 		
 		
@@ -42,27 +45,25 @@ public class chkBox extends Component {
 		        if(cb.isSelected()){
 		        //params.chkvalueArray[i] = cb.getText();
 		        
-		        params.setChkvalueArray(cb.getText(), i);
+		        //params.setChkvalueArray(cb.getText(), i);
 		        
 		        } else {
-		        params.setChkvalueArray("", i);
+		        //params.setChkvalueArray("", i);
 		        }
 		        
 		        
 		        
-		        for (int i=0; i< params.getChkvalueArray().length ; i++){
-		     
-
-		        	
-		        	options = options + params.getChkvalueArray()[i];
-		        	
-		        	if(i<=params.getChkvalueArray().length){
-		        		
-		        		params.setOptionstring(options);
-		        		System.out.println(params.getOptionstring());
-		        	}
-
-		        }
+				/*
+				 * for (int i=0; i< params.getChkvalueArray().size() ; i++){ options = options +
+				 * params.getChkvalueArray().get(i);
+				 * 
+				 * if(i<=params.getChkvalueArray().size()){
+				 * 
+				 * params.setOptionstring(options);
+				 * System.out.println(params.getOptionstring()); }
+				 * 
+				 * }
+				 */
 		        
 		        };	
 		        

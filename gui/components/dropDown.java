@@ -53,7 +53,7 @@ public class dropDown extends JComboBox{
 		
 		
 		for (int i = length; i > -1; i--) {
-			System.out.println("DD" + length);
+			//System.out.println("DD" + length);
 			dd.addItem(nList.item(i).getTextContent());;
 			
 		}

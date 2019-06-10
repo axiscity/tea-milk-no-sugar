@@ -2,6 +2,7 @@ package common;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,11 +13,12 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import busi.Params;
+import gui.components.chkBox;
 
 public class XMLoader {
 
 	
-	public NodeList XMLoader(String filename, Params params, String tagName, String[] strngArray){
+	public NodeList XMLoader(String filename, Params params, String tagName){
 		
 		File file = new File(filename);
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -40,11 +42,13 @@ public class XMLoader {
 		
 		NodeList nList = document.getElementsByTagName(tagName);
 		
-		strngArray = new String[nList.getLength()];
+		//strngArray = new String[nList.getLength()];
 
-        for (int i=0; i<strngArray.length ; i++){
+        for (int i=0; i < nList.getLength() ; i++){
 
-        	strngArray[i] = "";
+        	//strngArray[i] = "";
+        	BBuilderConstants.settings.add(nList.item(i).getNodeValue());
+        	//System.out.print(nList.item(i).getNodeValue());
         	
         	}
 
@@ -55,6 +59,7 @@ public class XMLoader {
 		
 		
 	}
+
 	
 	
 	
