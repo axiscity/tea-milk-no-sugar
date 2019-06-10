@@ -22,6 +22,7 @@ public class MenuListener {
 
 	public JFrame parent;
 	
+	public record rec = null;
 	
 	public MenuListener(Params params, JMenuItem menuitem) {
 		// TODO Auto-generated constructor stub
@@ -127,7 +128,7 @@ public class MenuListener {
 		System.out.print("fc:" + chosenFile);
 		BBuilderConstants.loadFile = chosenFile;
 		
-		record rec = new record();
+		rec = new record();
 		rec.loadRecord();
 		
 	}
@@ -143,7 +144,10 @@ public class MenuListener {
 		int result = fc.showOpenDialog(parent);
 		String chosenFile = fc.getSelectedFile().getAbsolutePath();
 		System.out.print(chosenFile);
-		BBuilderConstants.saveFile = chosenFile;
+		BBuilderConstants.saveFile = chosenFile + ".bbfb";
+		
+		rec = new record();
+		rec.makeRecord();
 		
 		
 	}

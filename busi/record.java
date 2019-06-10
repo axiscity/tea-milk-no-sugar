@@ -1,8 +1,16 @@
 package busi;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
+
 import org.w3c.dom.NodeList;
 
 import common.BBuilderConstants;
+import common.SaveFile;
+import common.SaveSettings;
 import common.XMLoader;
 
 public class record implements LoadSaveUpdate {
@@ -14,8 +22,76 @@ public class record implements LoadSaveUpdate {
 		
 		
 		
+		ArrayList<String> outPutArray = new ArrayList<String>(10);
+		
+		outPutArray.add("<!-- \r\n" + 
+				"BBFB Settings file\r\n" + 
+				"www.persuasive-images.net/BBFB\r\n" + 
+				" -->\n<bbfb>");
+		outPutArray.add("<setting type=\"mode\">");
+		if(Params.menu2Item1.getState() == true) {
+			outPutArray.add("Xcopy");
+		} else {
+			outPutArray.add("Robocopy");
+		}
+		
+		outPutArray.add("</setting>");
+		outPutArray.add("<setting type=\"title\">");
+		outPutArray.add("None");
+		outPutArray.add("</setting>");
+		outPutArray.add("<setting type=\"target\">");
+		outPutArray.add(Params.FolderLocation_Field.getText());
+		outPutArray.add("</setting>");
+		outPutArray.add("<setting type=\"destination\">");
+		outPutArray.add(Params.BackupLocation_Field.getText());
+		outPutArray.add("</setting>");
+		outPutArray.add("<setting type=\"batchfile\">");
+		outPutArray.add(Params.BatchFileLocation_Field.getText());
+		outPutArray.add("</setting>");
+		outPutArray.add("<setting type=\"flag\">");
+		String flags = "";
+		
+		for(int j = 0; j < Params.chkBoxesArray.size(); j++) {
+			
+			if (Params.chkBoxesArray.get(j).isSelected()) {
+				flags = flags + Params.chkBoxesArray.get(j).getName();
+				
+				int chbxasize = Params.chkBoxesArray.size();
+				
+				//System.out.println("chbxasize:" + Params.chkBoxesArray.size() + "::j:" + j);
+				
+
+				
+			}
+			
+			if(j == Params.chkBoxesArray.size() -1) {
+				outPutArray.add(flags);
+			//	System.out.println("Adding Flags");
+			}
+			
+			//System.out.println("Flags:" + flags + "::" + j + ":" + Params.chkBoxesArray.size() );
+			
+		}
+		
+		outPutArray.add("</setting>");
+		outPutArray.add("</bbfb>");
+
+		
+		String outPuttxt = "";
+		
+		for(int i = 0; i < outPutArray.size(); i++) {
+			
+			//System.out.print("Output Array:" + i + outPutArray.size());
+			
+			outPuttxt = outPuttxt + outPutArray.get(i) + "\n";
+			if(i == outPutArray.size() -1) {
+				new SaveSettings(BBuilderConstants.saveFile, outPuttxt);
+			}
+		}
+		
 		
 	}
+	
 	
 	@Override
 	public
@@ -63,6 +139,8 @@ public class record implements LoadSaveUpdate {
 					//System.out.println("ChkBOX" + chkboxName);
 					if(flags.contains(chkboxName)) {
 						Params.chkBoxesArray.get(j).setSelected(true);
+					} else {
+						Params.chkBoxesArray.get(j).setSelected(false);
 					}
 				}
 				

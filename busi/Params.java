@@ -34,6 +34,7 @@ public class Params {
 	
 	public static ArrayList<JCheckBox> chkBoxesArray = new ArrayList<JCheckBox>(10);
 	
+	
 	public static JTextField LoadPath_Field;
 	private JTextField SavePath_Field;
 	private JTextField FindThis_Field; 
