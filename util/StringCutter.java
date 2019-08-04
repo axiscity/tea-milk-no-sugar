@@ -8,7 +8,6 @@ public class StringCutter {
 		// TODO Auto-generated method stub
 		
 		
-		//String toedit = "Blah,grub,blub,jub,<Keep1>,Asset,Asset,Asset,<Keep1>,magic,<keep2>,Asset,Asset,Asset,Asset,Asset,<keep2>,fuckwits,no training,shite system,<keep3>,Asset,Asset,<keep3>";
 		String toedit = "Blah,grub,blub,jub,<Keep1>,Asset,Asset,Asset,<Keep1>,magic,<keep2>,Asset,Asset,<keep2>,yawn,everything assumed,bad bad,<keep3>,Asset,Asset,<keep3B>";
 		System.out.println("To_edit:!!" + toedit + "<Blah");
 		String Edited = "";
