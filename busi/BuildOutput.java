@@ -16,10 +16,14 @@ public class BuildOutput implements Runnable{
 	static Thread go = new Thread();
 	
 	
+	
 	  public BuildOutput(Params params) {
 	  
+		 go.start();
 	  System.out.println("Building Thread Running::" + Thread.currentThread().getStackTrace()); 
 	  String line1 ="";
+	  
+	 
 	  
 	  try {
 	  
@@ -27,6 +31,8 @@ public class BuildOutput implements Runnable{
 	  params.getFolderLocation_Field() + params.getQuotes() +
 	  params.getGap() + params.getQuotes() +
 	  params.getBackupLocation_Field() + params.getQuotes();
+	  
+
 	  
 	  } catch (Exception e) {
 	  
@@ -81,7 +87,7 @@ public class BuildOutput implements Runnable{
 		}
 
 		  
-		  go = null;
+		 //go = null;
 		  
 		   // TODO Auto-generated catch block
 		  
