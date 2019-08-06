@@ -40,17 +40,23 @@ public class chkBox extends JCheckBox {
 		        JCheckBox checkBox = (JCheckBox)event.getSource();	       
 		        System.out.println(checkBox.getText() + i);
 		        
+		        String chkBoxVal = "" + checkBox.getText();
+		        System.out.println(chkBoxVal + i);
 		        String options = "";
 		        
-		        if(cb.isSelected()){
-		        //params.chkvalueArray[i] = cb.getText();
-		        
+		        if(checkBox.isSelected()){
+		        params.chkvalueArray[i] = chkBoxVal;
 		        //params.setChkvalueArray(cb.getText(), i);
 		        
 		        } else {
-		        //params.setChkvalueArray("", i);
+		        params.setChkvalueArray("not used", i);
 		        }
 		        
+		        for (int i=0; i< params.chkvalueArray.length ; i++) {
+		        	
+		        	System.out.println(params.chkvalueArray[i] + i);
+		        	
+		        }
 		        
 		        
 				/*

@@ -1,6 +1,8 @@
 package busi;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -15,7 +17,7 @@ import gui.components.chkBox;
 public class Params {
 
 	
-
+	
 
 	private String localpathA = new XMLvar().XMLvar("appsettings.xml", this, "app_path", 0);
 	
@@ -66,7 +68,8 @@ public class Params {
 	private JCheckBox NameSearchCHBX;
 	public JCheckBox FolderSearchCHB;
 
-
+	
+	public List<String> ChkBoxList = new ArrayList();
 	
 	private String app = "robocopy";
 	private String quotes = "\"";
@@ -86,6 +89,8 @@ public class Params {
 
 
 	private String optionstring;
+
+	public String[] chkvalueArray = new String[10];
 
 
 	public String getLocalpathA() {
@@ -525,6 +530,12 @@ public class Params {
 
 	public void setOptionstring(String optionstring) {
 		this.optionstring = optionstring;
+	}
+
+
+	public void setChkvalueArray(String text, int i) {
+		this.chkvalueArray[i] = text;
+		
 	}
 	
 	

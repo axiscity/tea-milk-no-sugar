@@ -48,8 +48,6 @@ public class StringCutter {
 		return edit1;
 	}
 	
-	
-
 	private static String removeBit(String toedit, int skip, int hittimes, boolean removeKey) {
 		
 		// toedit is the string
@@ -89,7 +87,6 @@ public class StringCutter {
 		   }; 
 		   
 		}	
-		
 		
 		// Debug checking the right cells are being edited
 		String BeforeRemove = "";

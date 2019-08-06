@@ -3,6 +3,7 @@ package busi;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 
@@ -22,13 +23,14 @@ public class BuildOutput implements Runnable{
 		 go.start();
 	  System.out.println("Building Thread Running::" + Thread.currentThread().getStackTrace()); 
 	  String line1 ="";
+	  System.out.println("Batch FIle:" + params.getBatchFileLocation_Field());
 	  
 	 
 	  
 	  try {
 	  
 	  line1 = params.getApp() + " " + params.getQuotes() +
-	  params.getFolderLocation_Field() + params.getQuotes() +
+	  params.getFolderLocation_Field().getText() + params.getQuotes() +
 	  params.getGap() + params.getQuotes() +
 	  params.getBackupLocation_Field() + params.getQuotes();
 	  
@@ -43,34 +45,22 @@ public class BuildOutput implements Runnable{
 	  //System.out.print("\"Hello\"");
 	  
 	  String options = " /E";
-	  File file1 = null;
-	  FileWriter writer;
+	  //File file1 = null;
+	  PrintWriter writer;
 		
 		  try { 
+		
+		File file1 = new File("D:\\Test.bat");	  
 			  
-		String filePath = params.getBatchFileLocation_Field(); 
-		file1 = new File(filePath);
+		//String filePath = ;
+		//System.out.print(filePath);
+		//file1.createNewFile();
+		//file1 = new File(filePath);
 		
 		
 		  try {
 			file1.createNewFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			
-			System.out.println("Check you can write to the Batch file location");
-			
-		} 
-		  
-		  } catch (NullPointerException e) {
-		  
-			  e.printStackTrace(); }
-		  
-		  
-		  
-		  
-		  try {
-			  writer = new FileWriter(file1);
+			  writer = new PrintWriter(file1);
 			  writer.write("echo Created by Batch Builder\r\n\r\n:" +
 			  "www.persuasive-images.net/bb" + "\r\n\r\n" +  
 			  ":"+ params.getBatchFileLocation_Field() + "\r\n\r\n"); 
@@ -78,15 +68,22 @@ public class BuildOutput implements Runnable{
 			  writer.write("@pause\r\n\r\n"); 
 			  writer.close();
 			  
-			  System.out.println("THREAD::" + go );
-			  
-			  
+
+			
+			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+			//e.printStackTrace();
+			System.out.println(file1.getPath());
+			System.out.println("Check you can write to the Batch file location");
+			
+		} 
 		  
+		  } catch (NullPointerException e) {
+		  
+			  e.printStackTrace(); }
+
 		 //go = null;
 		  
 		   // TODO Auto-generated catch block
@@ -105,11 +102,15 @@ public class BuildOutput implements Runnable{
 		// TODO Auto-generated method stub
 		
 		System.out.println("Running");
+		  System.out.println("THREAD::" + go );
+		  (go = new Thread(new BuildOutput(params))).start();
 		
 	}
 	
     public static void main(String args[]) {
-        (go = new Thread(new BuildOutput(params))).start();
+    	if(params!=null) {
+       
+    	}
     }
 
 
