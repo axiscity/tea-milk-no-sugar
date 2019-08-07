@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <options>
-<sw txt="Mirrors a directory tree">//mir</sw>
-<sw txt="Copies subdirectories excluding empty directories">//s</sw>
-<sw txt="Copies subdirectories including empty directories">//e</sw>
-<sw txt="Copies files in Restart mode">//z</sw>
-<sw txt="Copies files in Backup mode">//b</sw>
-<sw txt="Uses Restart mode. If access is denied, this option uses Backup mode">//zb</sw>
-<sw txt="Moves files, and deletes them from the source after they are copied">//move</sw>
-<sw txt="Monitors source, and runs again in M minutes if changes are detected">//mot:15</sw>
-<sw txt="Excludes older files">//xo</sw>
-<sw txt="Writes the status output to the log file">//log</sw>
+<sw txt="Mirrors a directory tree">/mir</sw>
+<sw txt="Copies subdirectories excluding empty directories">/s</sw>
+<sw txt="Copies subdirectories including empty directories">/e</sw>
+<sw txt="Copies files in Restart mode">/z</sw>
+<sw txt="Copies files in Backup mode">/b</sw>
+<sw txt="Uses Restart mode. If access is denied, this option uses Backup mode">/zb</sw>
+<sw txt="Moves files, and deletes them from the source after they are copied">/move</sw>
+<sw txt="Monitors source, and runs again in M minutes if changes are detected">/mot:15</sw>
+<sw txt="Excludes older files">/xo</sw>
+<sw txt="Writes the status output to the log file">/log</sw>
 <app_path>
 C:\\Users\\Geoff\\Documents\\seats\\
 </app_path>

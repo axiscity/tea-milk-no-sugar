@@ -49,7 +49,7 @@ public class chkBox extends JCheckBox {
 		        //params.setChkvalueArray(cb.getText(), i);
 		        
 		        } else {
-		        params.setChkvalueArray("not used", i);
+		        params.setChkvalueArray(null, i);
 		        }
 		        
 		        for (int i=0; i< params.chkvalueArray.length ; i++) {

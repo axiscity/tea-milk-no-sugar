@@ -69,11 +69,11 @@ public class Params {
 	public JCheckBox FolderSearchCHB;
 
 	
-	public List<String> ChkBoxList = new ArrayList();
+	//public List<String> ChkBoxList = new ArrayList();
 	
 	private String app = "robocopy";
 	private String quotes = "\"";
-	private String gap = " ";
+	private String gap = "";
 	private String NewLine = "\n\r";
 	private String subDir = "/e";
 	private String monitorMins = "/MOT:";
@@ -90,7 +90,9 @@ public class Params {
 
 	private String optionstring;
 
-	public String[] chkvalueArray = new String[10];
+	public String backUpThis;
+
+	public static String[] chkvalueArray = new String[10];
 
 
 	public String getLocalpathA() {
