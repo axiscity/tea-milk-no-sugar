@@ -28,27 +28,21 @@ public class record implements LoadSaveUpdate {
 				"BBFB Settings file\r\n" + 
 				"www.persuasive-images.net/BBFB\r\n" + 
 				" -->\n<bbfb>");
-		outPutArray.add("<setting type=\"mode\">");
-		if(Params.menu2Item1.getState() == true) {
-			outPutArray.add("Xcopy");
-		} else {
-			outPutArray.add("Robocopy");
-		}
 		
-		outPutArray.add("</setting>");
-		outPutArray.add("<setting type=\"title\">");
-		outPutArray.add("None");
-		outPutArray.add("</setting>");
-		outPutArray.add("<setting type=\"target\">");
-		outPutArray.add(Params.FolderLocation_Field.getText());
-		outPutArray.add("</setting>");
-		outPutArray.add("<setting type=\"destination\">");
-		outPutArray.add(Params.BackupLocation_Field.getText());
-		outPutArray.add("</setting>");
-		outPutArray.add("<setting type=\"batchfile\">");
-		outPutArray.add(Params.BatchFileLocation_Field.getText());
-		outPutArray.add("</setting>");
-		outPutArray.add("<setting type=\"flag\">");
+		String Line ="<setting type=\"mode\">";
+
+		if(Params.menu2Item1.getState() == true) {
+			Line = Line + "Xcopy";
+		} else {
+			Line = Line + "Robocopy";
+		}
+		Line = Line + "</setting>";
+		outPutArray.add(Line);
+		outPutArray.add("<setting type=\"title\">None</setting>");
+		outPutArray.add("<setting type=\"target\">" + Params.FolderLocation_Field.getText() + "</setting>");
+		outPutArray.add("<setting type=\"destination\">" + Params.BackupLocation_Field.getText() + "</setting>");
+		outPutArray.add("<setting type=\"batchfile\">" + Params.BatchFileLocation_Field.getText() + "</setting>");
+		
 		String flags = "";
 		
 		for(int j = 0; j < Params.chkBoxesArray.size(); j++) {
@@ -60,20 +54,15 @@ public class record implements LoadSaveUpdate {
 				
 				//System.out.println("chbxasize:" + Params.chkBoxesArray.size() + "::j:" + j);
 				
-
-				
 			}
 			
 			if(j == Params.chkBoxesArray.size() -1) {
-				outPutArray.add(flags);
+				outPutArray.add("<setting type=\"flag\">" + flags + "</setting>");
 			//	System.out.println("Adding Flags");
 			}
-			
-			//System.out.println("Flags:" + flags + "::" + j + ":" + Params.chkBoxesArray.size() );
-			
+			//System.out.println("Flags:" + flags + "::" + j + ":" + Params.chkBoxesArray.size() );			
 		}
-		
-		outPutArray.add("</setting>");
+
 		outPutArray.add("</bbfb>");
 
 		

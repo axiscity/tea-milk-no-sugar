@@ -37,9 +37,9 @@ public class BuildOutput implements Runnable{
           
 	  try {
 	  
-	  line1 = params.getApp() + params.getQuotes() +
-	  params.getFolderLocation_Field().getText() + params.getQuotes() + params.getQuotes() +
-	  params.getBackupLocation_Field() + params.getQuotes();
+	  line1 = params.getApp() + " " + params.getQuotes() +
+	  params.getFolderLocation_Field().getText() + params.getQuotes() + " " + params.getQuotes() +
+	  params.getBackupLocation_Field() + params.getQuotes() + " ";
 	  
 
 	  
